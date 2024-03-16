@@ -1,7 +1,9 @@
 # Compare_GANs_for_Cross-Modal_Place-Recognition
 
 "교차 모달 장소 인식을 위한 생성 모델의 비교 및 분석", KRoC 2024  
-This repository conducted research on comparing and analyzing to select a suitable generative model for performing cross-modal place recognition between visual and LiDAR sensors.
+
+This repository conducted research on comparing and analyzing to select a suitable generative model for performing cross-modal place recognition between visual and LiDAR sensors.  
+
 We compared Pix2pix, CycleGAN, CUT, and SPADE models, using the difference between VGG16 feature maps as the comparison criterion.
 
 

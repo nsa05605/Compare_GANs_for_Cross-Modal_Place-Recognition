@@ -1,0 +1,12 @@
+python3 -u train.py \
+    --name SPADE_kitti \
+    --dataset_mode pix2pix \
+    --dataroot /home/nsa05605/CMPR/BEV2SAT/dataset/small_kitti/ \
+    --no_instance \
+    --label_nc 0 \
+    --batchSize 16 \
+    --gpu_ids 0 \
+    --load_size 286 \
+    --crop_size 256 \
+    --save_epoch_freq 1 \
+    --continue_train

@@ -1,0 +1,49 @@
+### pure CycleGAN ###
+
+python3 train.py --dataroot /media/nsa05605/T7/CMPR/KITTI-360/train --name KITTI_cycleGAN_second --model cycle_gan 
+
+python test.py --dataroot /media/nsa05605/T7/CMPR/KITTI-360/train --name KITTI_cycleGAN --model cycle_gan --direction AtoB --load_iter 15
+
+
+### CycleGAN with GT ###
+
+python3 train.py \
+    --dataroot /media/nsa05605/T7/CMPR/KITTI-360/train_cyclegan_with_gt/ \
+    --name KITTI_cycleGAN_gt2 \
+    --model cycle_gan \
+    --dataset_mode aligned \
+    --batch_size 4 \
+    --save_epoch_freq 2
+
+python test.py \
+    --dataroot /media/nsa05605/T7/CMPR/KITTI-360/test/2 \
+    --name KITTI_cycleGAN_second \
+    --model cycle_gan \
+    --direction AtoB \
+    --load_iter 25 \
+    --dataset_mode aligned
+
+python test.py \
+    --dataroot /home/nsa05605/CMPR/BEV2SAT/dataset/small_kitti/ \
+    --name KITTI_pix2pix_gt \
+    --model pix2pix \
+    --direction AtoB \
+    --load_iter 40
+
+
+### pix2pix
+
+python3 train.py \
+    --dataroot /home/nsa05605/CMPR/BEV2SAT/dataset/small_kitti/ \
+    --name KITTI_pix2pix_last \
+    --model pix2pix \
+    --dataset_mode aligned \
+    --batch_size 128 \
+    --save_epoch_freq 1
+
+python test.py \
+    --dataroot /home/nsa05605/CMPR/BEV2SAT/dataset/small_kitti/ \
+    --name KITTI_pix2pix_last \
+    --model pix2pix \
+    --direction AtoB \
+    --load_iter 112
